@@ -1,0 +1,133 @@
+(running monolog, actually)
+NOTES_on
+    -issues_ran_into
+    -thought_processes-questions
+    -solutions--PERSONAL_not_public
+      --but_maybe_mine_for_blogposts
+
+2021-12-01--02:
+
+    // How save this file to my repo for PERSONAL CONSUMPTION ONLY??
+    // saved with the repo and code, but hidden from others? UGH.
+    // if gitignore, I may loose this doc. (it rambles, so maybe not all bad)
+    // but if I do not gitignore, it is a pubically visible eyesore to any random person on the internet. Embarrasing, and not useful to anyone else.
+    // OTOH, nobody is going to ever see/read my repos anyway!
+    //   and once in a while I loose track of a solution that I found long ago, and now do not remember.
+    //   also, I do project in spurts, and forget what I was working on, or issues I had when I eventurally revisit!
+    //   and I have some stupid compulsion to record processes, ugh. It is annoying to me. TIME CONSUMING. But compulsory! cannot be helped.
+    //   Also, though, how many times has documenting some little thing come to my rescue YEARS LATER?
+    //   I *guess* for now, I...UGH. I ..uh..I don't like either option.
+    //   Is there a commit, but visible ONLY TO ME option??? ugh.
+    // Need to keep this WITH the repo.
+    // Consider THIS solution: https://stackoverflow.com/a/62213595/5411817
+    //  (private plus public repo, linked locally)
+    //  until then: just don't commit this file? (or temp add it to gitignore?)
+    // Another suggestion is to use encryption: https://superuser.com/a/1411625/659759
+
+2021-12-01
+
+    SOLUTIONS (to 2021-11-30 issues):
+    1) FORK epicreact-module. Then CLONE my fork. (change clone url in his instructions)
+    3) VScode: Install Recommended Extensions when FIRST OPEN module repo/workspace
+    4) VSCode: rename .vscode/settings.kcd.json to .vscode/settings.json
+    Started the course.
+    5) DEV BROWSER: add .env file (better yet: .env.local so it is gitignored, re: must use a different name for each OS, and do not want other users to be stuck with your browser choice) with:
+        BROWSER='chrome'
+    6) private Notes: *could simply make this repo private!)
+        currently, moved it into folder `z-SH_NOTES_private` to be out of the way (end of folders list)
+        it is pubically visible :-(. Nobody sees my repos anyway.
+        Just make sure no "SECRET" info gets posted.
+
+2021-11-30 and
+
+    Issues: FORK 1st. VSCode Settings. VSCode Extensions. DEV Browser.
+    1-  FORK:
+        had to delete and re-install (re: FORK for git, and VScode extensions).
+        - In order to be able to git save my work, must first FORK his repo.
+        Then alter his instructions CLONE MY FORK, instead of his repo.
+        - only have access to install recommended
+        extensions the FIRST time open a particular folder, or workspace!
+        (searching for them manually returned ambiguous results, so better to have them auto installed.)
+    2-  (VSCode)
+        Decided to use Visual Studio code, for the first time. It is a bit confusing to get started.
+        Also decided to use his recommended vscode extensions and his same vscode extensions.
+        But HOW?? This part took *forever* to figure out. Wish he put this info in his repo. Search results were not very helpful. Hard to get the right search term, and results assumed a level of knowledge/familiarity that skipped over the base-line knowledge needed to apply the knowledge.
+    3-  EXTENSIONS: Workspace (Repo) Recommended VSCode EXTENSIONS
+    To install his recommended extensions, For This Repo Only:
+        When open the Workkspace or repo Folder for the FIRST TIME (only),
+        an option is given to install the "repo's/workspace/s recommended extensions"
+        Say Yes. Note to distinguish between the repo's recommended extensions from "generic" community/vscode recommended extenssions!!!
+        - The list in in the file `<repo-name>/.vscode/extensions.json`. Here `react-fundamentals` is the <repo-name>.
+            - Can open the .vscode/extensions.json file, then
+            - click the bottom-left squares "Extensions" icon.
+            - Then search for the items in the extensions folder, BUT entering the namespace (portion before the first dot), will come up EMPTY every time.
+              And just entering the portion after the last dot, often returns MANY results. So choosing the correct one can be ambiguous.
+              Finally, there are 2 sections: Workkspace Recommendations and Other Recommendations.
+              Can open those sections to see what extensions are active ONCE extensions are installed.
+              Or can FILTER recommendations by those.
+              BUT it does not seem to work until AFTER extensions are *already* installed.
+              Or it is unreliable and requires wizardry that I have not figured out to get it to work.
+              Hence, most reliable is if THE FIRST TIME open the repo, and know you want them installed, to do so.
+    4-  SETTINGS: (applying/using Dodd's VSCode SETTINGS file)
+        The trick to getting VScode to use apply specific WORKSPACE SETTINGS is to include a
+        `/.vscode/settings.json` file. This will override USER global settings.
+        So RENAME Kent's `.vscode/settings.kcd.json` file to `settings.json`.
+        To revert, just rename the file again to anything else (or delete)
+    5-  DEV BROWSER: (browser used by npm start)
+        To get the dev build to open a specific browser, other than the OS system's DEFAULT BROWSER:
+        (RE: it is recommended to use Chrome or Firefox so have access to React Dev Tools Extensions)
+        - *can* change line in `package.json` to:
+             `"start": "BROWSER=chrome react-scripts start"`
+            BUT then it would be added to the repo, and may not be preferred by other users (though nobody else would ever use this repo!!)
+            worse: the command used is dependant on OS.
+            (eg BROWSER="chrome" (windows), "google-chrome"(Mac), "google chrome"(linux))
+            So it is hacky, and can make the repo unusable from a different OS.
+        - recommended by React is to:
+            - create an `.env` file, which is NOT saved to the repo (.gitignored), but will work locally. Also need to remember to add it to every project manually.
+            - Or create a shell env variable, but then it would always be applied to every project or command from the command line.
+            https://create-react-app.dev/docs/advanced-configuration/
+        - also suggested is to add a DEV dependancy that sets the browser for the repo, but also auto switches syntax to account for the user's OS.
+            (https://stackoverflow.com/a/60808843/5411817)
+            eg: `npm install --save-dev cross-env`
+            then `"start": "cross-env BROWSER=chrome react-scripts start"` in `package.json`
+        -
+    6-  How to keep these rambling notes private?
+        -  Public and Private separate repos, but linked locally.
+            https://stackoverflow.com/a/62213595/5411817
+        -  Other answers to same thread
+            https://stackoverflow.com/questions/25177014/make-some-files-private-in-a-repository
+        -  Encryption
+            https://superuser.com/a/1411625/659759
+
+
+2021-11-30
+    Final Messages returned after install the react-fundamentals module:
+        The project was built assuming it is hosted at /.
+        You can control this with the homepage field in your package.json.
+
+        The build folder is ready to be deployed.
+        You may serve it with a static server:
+
+        npm install -g serve
+        serve -s build
+
+        Find out more about deployment here:
+
+        https://cra.link/deployment
+
+            ✅  Success: Project Validation
+
+
+            ▶️  Starting: Autofilling Email
+                Each exercise comes with a elaboration form to help your retention. Pr
+        oviding your email now will mean you don't have to provide it each time you fill
+        out the form.
+                Running the following command: npx "https://gist.github.com/kentcdodds
+        /2d44448a8997b9964b1be44cd294d1f5"
+        ? What's your email address?
+
+        Prompt timed out. No worries. If you'd like to try again, run this command:
+
+            npx "https://gist.github.com/kentcdodds/2d44448a8997b9964b1be44cd294d1f5"
+
+
