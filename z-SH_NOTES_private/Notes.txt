@@ -5,6 +5,19 @@ NOTES_on
     -solutions--PERSONAL_not_public
       --but_maybe_mine_for_blogposts
 
+
+
+2021-12-01--03:
+    As per https://create-react-app.dev/docs/adding-custom-environment-variables/#adding-development-environment-variables-in-env
+        `.env.development.local` renamed from `.env.local`
+    Note: cra recommends this solution for reading which OS and Browser users have installed,
+        and selecting the preferred browser form this ordered list.
+        https://create-react-app.dev/docs/adding-custom-environment-variables/#adding-development-environment-variables-in-env
+
+        (This is from the "browser" link on the CRA advanced configuration page:
+        https://create-react-app.dev/docs/advanced-configuration/)
+
+
 2021-12-01--02:
 
     // How save this file to my repo for PERSONAL CONSUMPTION ONLY??
@@ -129,5 +142,3 @@ NOTES_on
         Prompt timed out. No worries. If you'd like to try again, run this command:
 
             npx "https://gist.github.com/kentcdodds/2d44448a8997b9964b1be44cd294d1f5"
-
-
