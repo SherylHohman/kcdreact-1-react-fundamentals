@@ -16,15 +16,19 @@
     element.className = 'container' // 💰 in React, this is also called the "className" prop
     */
 
+    // extra credit: wrap each word in a span tag.
+    // vs REACT JS
+    const span1 = React.createElement('span', {children: 'Hello'})
+    const span2 = React.createElement('span', {children: 'World'})
     const element = React.createElement('div', {
       className: 'container',
-      children: 'Hello World',
+      children: [span1, span2],
     })
 
     /* Vanilla JS:
     rootElement.append(element)
     */
-
+    // vs REACT (ReactDOM)
     ReactDOM.render(element, rootElement)
   </script>
 </body>
