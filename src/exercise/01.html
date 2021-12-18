@@ -4,10 +4,11 @@
 <body>
   <div id="root"></div>
   <script type="module">
-    let d = document.createElement('div')
-    d.textContent = 'Hello World'
-    d.classList = 'container'
-    document.getElementById('root').append(d)
+    const rootElement = document.getElementById('root')
+    const element = document.createElement('div')
+    element.textContent = 'Hello World'
+    element.classList = 'container'
+    rootElement.append(element)
   </script>
 </body>
 
