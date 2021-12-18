@@ -1,6 +1,16 @@
 <!-- Basic JavaScript-rendered Hello World -->
 <!-- http://localhost:3000/isolated/exercise/01.html -->
 
+<body>
+  <div id="root"></div>
+  <script type="module">
+    let d = document.createElement('div')
+    d.textContent = 'Hello World'
+    d.classList = 'container'
+    document.getElementById('root').append(d)
+  </script>
+</body>
+
 <!-- 🐨 Create (in HTML) a <body> with a <div> with the id of "root" -->
 <!-- 🐨 Then create a <script type="module"> for your JavaScript -->
 <!--   📜 https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script#attributes -->
@@ -11,7 +21,8 @@
 <!-- 🐨 Create a div -->
 <!--   💰 document.createElement('div') -->
 
-<!-- 🐨 Set the div's textContent to 'Hello World' and className to 'container' -->
+<!-- 🐨 Set the div's textContent to 'Hello World'
+        and className to 'container' -->
 <!--   💰 div.textContent = '...' -->
 
 <!-- 🐨 Append the div to the root div using `append` -->
