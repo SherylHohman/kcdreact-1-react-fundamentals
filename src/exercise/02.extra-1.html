@@ -25,6 +25,24 @@
       children: [span1, ' ', span2],
     })
 
+    // extra credit: their equivalent of the above "3" lines as "1-liner":
+    /*
+      const element = React.createElement('div', {
+        className: 'container',
+        children: [
+          React.createElement('span', null, 'Hello'),
+          ' ',
+          React.createElement('span', null, 'World'),
+        ],
+      })
+      */
+    // "null" is needed as 2nd (props) argument because they do NOT use
+    //   object format for passing arguments.
+    //   If use positional method to pass the arguments, they are ordered as:
+    //     element, [props], [...children]
+    //   and There are no props being passed in.
+    //  docs: https://reactjs.org/docs/react-api.html#createelement
+
     /* Vanilla JS:
     rootElement.append(element)
     */
