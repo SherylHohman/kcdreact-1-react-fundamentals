@@ -21,9 +21,13 @@ import '../box-styles.css'
 //   small lightblue box
 // </Box>
 
-const Box = ({className = '', style = {}, children}) => {
+const Box = ({className = '', style = {}, children, ...otherProps}) => {
   return (
-    <div className={`box ${className}`} style={{fontStyle: 'italic', ...style}}>
+    <div
+      className={`box ${className}`}
+      style={{fontStyle: 'italic', ...style}}
+      {...otherProps}
+    >
       {children}
     </div>
   )
