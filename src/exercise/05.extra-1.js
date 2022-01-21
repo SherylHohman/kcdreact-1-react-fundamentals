@@ -24,13 +24,10 @@ import '../box-styles.css'
 //   small lightblue box
 // </Box>
 
-const Box = props => {
+const Box = ({className, style, children}) => {
   return (
-    <div
-      className={'box ' + props.className}
-      style={{fontStyle: 'italic', ...props.style}}
-    >
-      {props.children}
+    <div className={'box ' + className} style={{fontStyle: 'italic', ...style}}>
+      {children}
     </div>
   )
 }
