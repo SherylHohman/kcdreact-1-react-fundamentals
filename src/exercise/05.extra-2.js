@@ -13,20 +13,17 @@ import '../box-styles.css'
 // 🐨 add a style prop to each of them as well so their background color
 // matches what the text says it should be as well as `fontStyle: 'italic'`
 
-// 1. 💯 Create a custom component
-// Production deploy
-
+// Extra Credit 1. 💯 Create a custom component
 // Try to make a custom <Box /> component that renders a div, accepts all the props and merges the given style and className props with the shared values.
 
 // I should be able to use it like so:
-
 // <Box className="box--small" style={{backgroundColor: 'lightblue'}}>
 //   small lightblue box
 // </Box>
 
-const Box = ({className, style, children}) => {
+const Box = ({className = '', style = {}, children}) => {
   return (
-    <div className={'box ' + className} style={{fontStyle: 'italic', ...style}}>
+    <div className={`box ${className}`} style={{fontStyle: 'italic', ...style}}>
       {children}
     </div>
   )
