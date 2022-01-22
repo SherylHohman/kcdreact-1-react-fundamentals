@@ -53,11 +53,7 @@ const Box = ({size, className = '', style, children, ...otherProps}) => {
 }
 
 const smallBox = (
-  <Box
-    size="small"
-    className="box--medium"
-    style={{backgroundColor: 'lightblue'}}
-  >
+  <Box size="small" style={{backgroundColor: 'lightblue'}}>
     small lightblue box
   </Box>
 )
