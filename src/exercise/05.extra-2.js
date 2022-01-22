@@ -36,13 +36,7 @@ import '../box-styles.css'
 //   small lightblue box
 // </Box>
 
-const Box = ({
-  size = '',
-  className = '',
-  style = {},
-  children,
-  ...otherProps
-}) => {
+const Box = ({size, className = '', style, children, ...otherProps}) => {
   const classNameViaSizeProp = size ? 'box--' + size : ''
   // If no size is passed in, but a className is, className should definitely be set.
   // Which should take priority if conflicting size and className are both passed in?
