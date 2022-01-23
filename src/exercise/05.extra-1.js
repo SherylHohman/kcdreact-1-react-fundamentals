@@ -21,17 +21,35 @@ import '../box-styles.css'
 //   small lightblue box
 // </Box>
 
-const Box = ({className = '', style, children, ...otherProps}) => {
+const Box = ({className = '', style, ...otherProps}) => {
+  // children is included in otherProps and passed on as children
+  // to the div component to render as children "automatically"
+  // I do NOT need to wrap it as in <div>{children}</div>
+  // Instead <div {...otherProps} /> will accomplish it.
   return (
     <div
       className={`box ${className}`}
       style={{fontStyle: 'italic', ...style}}
       {...otherProps}
-    >
-      {children}
-    </div>
+    />
   )
 }
+
+// Above: do not need destructure the children prop in the custom component,
+// or need to overtly render it within my component.
+
+// children is part of otherProps.
+// Simply passing otherProps as a prop to the div component that I return
+// will pass the children key/value as one of the props sent to the
+// div component. (React.createElement) reads the children prop, and
+// knows how to render children as children.
+// Then children of my JSX become the children of the rendered div
+// (from my custom component)
+// Remember, children do not need to be between starting and closing tag.
+// They *can* be. OR they can be on a children prop in the object.
+// Since I do not need to overtly wrap {children},
+// I also do not specifically need a closing tag.
+// I can instead use a self closing tag for the div element.
 
 const smallBox = (
   <Box className="box--small" style={{backgroundColor: 'lightblue'}}>
