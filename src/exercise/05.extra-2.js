@@ -36,19 +36,34 @@ import '../box-styles.css'
 //   small lightblue box
 // </Box>
 
-const Box = ({size, className = '', style, children, ...otherProps}) => {
+const Box = ({size, className = '', style, ...otherProps}) => {
   const classNameViaSizeProp = size ? 'box--' + size : ''
   // If no size is passed in, but a className is, className should definitely be set.
   // Which should take priority if conflicting size and className are both passed in?
   // Size will win out the way I wrote it below, because it is last.
+
+  // do not need destructure the children prop in the custom component,
+  // or need to overtly render it within my component.
+
+  // children is part of otherProps.
+  // Simply passing otherProps as a prop to the div component that I return
+  // will pass the children key/value as one of the props sent to the
+  // div component. (React.createElement) reads the children prop, and
+  // knows how to render children as children.
+  // Then children of my JSX become the children of the rendered div
+  // (from my custom component)
+  // Remember, children do not need to be between starting and closing tag.
+  // They *can* be. OR they can be on a children prop in the object.
+  // Since I do not need to overtly wrap {children},
+  // I also do not specifically need a closing tag.
+  // I can instead use a self closing tag for the div element.
+
   return (
     <div
       className={`box ${className} ${classNameViaSizeProp}`}
       style={{fontStyle: 'italic', ...style}}
       {...otherProps}
-    >
-      {children}
-    </div>
+    />
   )
 }
 
