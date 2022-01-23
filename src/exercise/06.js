@@ -39,7 +39,7 @@ function UsernameForm({onSubmitUsername}) {
     console.log(event.target)
     console.dir(event.target)
     console.log(
-      event.target.elements.usernameFieldName,
+      event.target.elements.usernameInputFieldName,
       event.target.elements.usernameInputID,
       event.target.elements[0],
     )
@@ -49,7 +49,7 @@ function UsernameForm({onSubmitUsername}) {
     // It calls itself input#usernameInputID
     // (id="usernameInputID" was placed in the <input> tag)
     /*
-    console.dir(event.target.elements.usernameFieldName)
+    console.dir(event.target.elements.usernameInputFieldName)
     console.dir(event.target.elements.usernameInputID)
     console.dir(event.target.elements[0])
     */
@@ -60,9 +60,9 @@ function UsernameForm({onSubmitUsername}) {
     // event.target.elements.usernameInputID
     //    this is the id I assigned to the input element
     //    <input id="usernameInputID" />
-    // event.target.elements.usernameFieldName
+    // event.target.elements.usernameInputFieldName
     //    this is the "name" property I assigned to the input field's value
-    //    <input name="usernameFieldName" />
+    //    <input name="usernameInputFieldName" />
     // obviously, I would probably set BOTH name and id to "username"
     //    but I wanted to distinguish the id, name, htmlfor, and label
     //    So I could see the structure, and wanted to be able to figure out
@@ -76,7 +76,16 @@ function UsernameForm({onSubmitUsername}) {
     //    I think usually one would reference the NAME property of the
     //      html element in question.
 
-    onSubmitUsername(event.target.elements.usernameFieldName.value)
+    /* onSubmitUsername(event.target.elements.usernameInputFieldName.value) */
+    onSubmitUsername(event.target.elements.usernameInputID.value)
+    // both options above work.
+    // This exercise expected us to create an ID for the input field
+    // but did not expect us to create a NAME prop for the input field
+    // So, I guess using the ID was the expected solution.
+    //  So I'm updating my solution to reflect that.
+    //  BUT because of my extensive notes, I am
+    //  NOT DELETING the name="usernameInputFieldName" property
+    //  Yes, my names are horrible, but useful for learning and discovery.
   }
 
   // 🐨 add the onSubmit handler to the <form> below
@@ -87,7 +96,7 @@ function UsernameForm({onSubmitUsername}) {
     <form onSubmit={handleSubmit}>
       <div>
         <label htmlFor="usernameInputID">Username:</label>
-        <input id="usernameInputID" name="usernameFieldName" type="text" />
+        <input id="usernameInputID" name="usernameInputFieldName" type="text" />
       </div>
       <button type="submit">Submit</button>
     </form>
