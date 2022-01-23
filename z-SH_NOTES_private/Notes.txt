@@ -5,6 +5,105 @@ NOTES_on
     -solutions--PERSONAL_not_public
       --but_maybe_mine_for_blogposts
 
+2022-01-23--01:
+    SUPER ANNOYING THAT THE COURSE DOES NOT INCLUDE EMPTY EXTRA CREDIT FILES.
+    TODO: EVERYTIME INSTALL A NEW MODULE FOR THE COURSE,
+    REMEMBER TO DO THE FOLLOWING BEFORE START THE COURSE:
+        1) Create Empty File for Every Extra Credit "challenge" in Every Exercise.
+           (Easiest way I found is to copy every FINAL Extra Credit Solution file
+             into a temp folder. This will give me every file name I need.
+             Now Open every one of these files, Delete all Code, Save & Close.
+             Now move all those files into my "exercise" folder,
+             and delete the temp folder
+            )
+            Reason this is needed is because the platform needs those files to
+              EXIST before the server is started, in order for the platform to be
+              able to incorporate those files into the platform itself.
+              The files will not show up in the exercise file tabs for the exercise set,
+              the output for any file changes will not show up, the tests will not
+              run, and even the link to open the file in an isolated window will not work!!
+            Not only is the CONFUSING, until the issue is figured out..
+            It is terrible UX, ANNOYING, a stupid thing to have to remember to do
+            (the type thing computers were designed to handle!
+            and TIME CONSUMING, mindless CHORE.
+
+            KC Dodds could EASILY & Quickly create all those empty files,
+              so they would be immediately available to every course student,
+              WITHOUT HASSLE, the MOMENT they start their course.
+              And would eliminate confusion and frustration when students cannot
+              figure out why sometimes extra credit shows up, and other times does not,
+              and how do they get the extra credit to work.
+              To the user, the platform/course seems BUGGY (and it is..)
+              until they figure out the WORK AROUND or fix.
+              It took me until Lesson 1.5 to get this right.)
+
+            It takes 4 MINUTES to restart the server!
+
+        2)  Remember to change TEST files from "final" folder to "exercise" folder
+            for ALL tests.
+
+        3)  Add MY ENV file so the platform uses CHROME Browser,
+                instead of MY Default Browser (Edge or Edge Beta, ATM)
+
+        4)  FORK his repo First!
+            Use MY forked URL
+            Add his as Upstream
+            Create a Branch for all MY Exercise Commits.
+
+
+    create empty extra-credit files
+
+    create empty extra-credit files for all remaining exercises.
+    Now once restart server, the platform can show and run any code I add
+    to those files.
+    (ie FIXES the platform, now can DO the extra credit
+        without restarting the server EVERY time!
+    The empty files should all have came with the course !!!,
+        as the platform depends on those files already
+        existing for each exercise set, when the exercise is started.
+        and requires us to create the file and restart the server otherwise.
+    )
+
+    Annoyingly, the course does not create files for the "extra credit".
+    And the way the course is designed, that means they do not show up in the
+    "course" (platform).
+    So, the server must be stopped and the file manually created every time.
+    Then the SERVER MUST BE RESTARTED, each time an exercise/extra-credit
+    file is created, in order for
+    the course platform to be able to load it to show the file in the tab
+    row, and to show the output of the exercise, and even to open the file
+    up in an "isolated tab".  Unless the file already exists, the PLATFORM
+    cannot embed the file into its interactive materials.
+    And restarting the server takes Several MINUTES.
+
+    I get that he wanted the extra credit files to start out empty. That is fine.
+    But include the EMPTY FILES! As is, his UX is RE: extra credit, is ANNOYING!.
+    So, I created the remaining files so the platform has these empty files
+    available and able to be read into the platform.
+
+    NOTE TO SELF: FOR EACH MODULE DOWNLOADED:
+    - change all tests to run on MY code, instead of his solution code!
+    - create an extra credit file for EVERY extra credit exercise in the module.
+        (I copied every extra credit solution file into a temp directory.
+        Then opened and deleted the code from every file in that temp directory.
+        saved and closed the file.
+        Then moved all those files into my "exercise" directory, and deleted temp dir.
+        This was the easiest way to capture every extra credit file name
+        that will need to exist eventually.
+        )
+
+    # Please enter the commit message for your changes. Lines starting
+    # with '#' will be ignored, and an empty message aborts the commit.
+    #
+    # Date:      Sun Jan 23 06:13:57 2022 -0800
+    #
+    # On branch sh
+    # Changes to be committed:
+    #	new file:   src/exercise/06.extra-1.js
+    #	new file:   src/exercise/06.extra-2.js
+    #	new file:   src/exercise/06.extra-3.js
+    #	new file:   src/exercise/07.extra-1.js
+    #
 
 
 2021-12-01--03:
