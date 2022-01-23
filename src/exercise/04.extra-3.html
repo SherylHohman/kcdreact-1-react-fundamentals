@@ -41,9 +41,18 @@
     //  (later we'll import the prop-types package)
     const PropTypes = {
       string(props, propName, componentName) {
-        if (typeof props[propName] !== 'String') {
+        const type = typeof props.propName
+        let typeResponse
+        if (type === 'undefined') {
+          typeResponse = `ATM, the '${propName}' prop either does not exist, or has the value: 'Undefined'`
+        } else {
+          let capitalizedType = type.charAt(0).toUpperCase() + type.slice(1)
+          typeResponse = `This instance of ${propName} was passed in as a ${capitalizedType}, with value '${props[propName]}'.`
+        }
+        if (typeof props[propName] !== 'string') {
+          console.log('incorrect propType:', typeof props.propName)
           return new Error(
-            `Warning: ${componentName} needs a prop named ${propName} of type String.`,
+            `\nThe Component '${componentName}' needs a prop named '${propName}' of type 'String'. \n"${typeResponse}".`,
           )
         }
       },
@@ -109,7 +118,7 @@
     // <Message greeting="Goodbye" subject="World" />
     const element = (
       <div className="container">
-        <Message greeting="Hello" subject="World" />
+        <Message Xgreeting="Hello" subject="World" />
         <Message greeting="Goodbye" subject="World" />
       </div>
     )
