@@ -3,6 +3,11 @@
 
 import * as React from 'react'
 
+// NOTE: The Test does NOT PASS!
+//  I dunno why. It seems to work properly
+//  It seems to match their solution
+//  lowercase IS in the alert ??!!
+
 // Controlled inputs
 // set a element/component's value attribute (equal to some state variable)
 //      eg <input value={username}>
@@ -17,28 +22,37 @@ import * as React from 'react'
 //   Rem to overtly convert to (errorMessage) to Boolean
 // Delete errorMessage stuff from extra-credit-2, as invalid input is not possible
 
+// Changed the name ID of the input element to
+//  usernameInput from usernameInputID
+//  I never liked the previous name,
+//  but it had served a useful purpose originally when I was trying to locate
+//  properties within the huge event object in the first exercise.
+
 function UsernameForm({onSubmitUsername}) {
   const [username, setUsername] = React.useState('')
 
   const handleSubmit = event => {
     event.preventDefault()
-    onSubmitUsername(event.target.usernameInputID.value)
+    // NOTE: this now submits username, NOT event.target.usernameInput.value !!
+    //   way easier to access a controlled variable than a value stored in
+    //   an element in the DOM!
+    // onSubmitUsername(event.target.usernameInput.value)
+    onSubmitUsername(username)
   }
 
   const handleChange = event => {
-    const value = event.target.value
-    setUsername(value.toLowerCase())
+    setUsername(event.target.value.toLowerCase())
   }
 
   return (
     <form onSubmit={handleSubmit}>
       <div>
-        <label htmlFor="usernameInputID">Username:</label>
+        <label htmlFor="usernameInput">Username:</label>
         <input
-          value={username}
-          onChange={handleChange}
-          id="usernameInputID"
+          id="usernameInput"
           type="text"
+          onChange={handleChange}
+          value={username}
         />
       </div>
       <button disabled={Boolean(!username)} type="submit">

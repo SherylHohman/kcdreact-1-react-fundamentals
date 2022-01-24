@@ -9,12 +9,18 @@ import * as React from 'react'
 // Disable the onSubmit button by setting its "disabled" attribute.
 //   Rem to overtly convert to (errorMessage) to Boolean
 
+// Changed the name ID of the input element.
+//  usernameInput from usernameInputID
+//  I never liked the previous name,
+//  but it had served a useful purpose originally when I was trying to locate
+//  properties within the huge event object in the first exercise.
+
 function UsernameForm({onSubmitUsername}) {
   const [errorMessage, setErrorMessage] = React.useState(null)
 
   const handleSubmit = event => {
     event.preventDefault()
-    onSubmitUsername(event.target.usernameInputID.value)
+    onSubmitUsername(event.target.usernameInput.value)
   }
 
   const handleChange = event => {
@@ -26,8 +32,8 @@ function UsernameForm({onSubmitUsername}) {
   return (
     <form onSubmit={handleSubmit}>
       <div>
-        <label htmlFor="usernameInputID">Username:</label>
-        <input onChange={handleChange} id="usernameInputID" type="text" />
+        <label htmlFor="usernameInput">Username:</label>
+        <input onChange={handleChange} id="usernameInput" type="text" />
         <p role="alert" style={{color: 'red'}}>
           <i>{errorMessage}</i>
         </p>
