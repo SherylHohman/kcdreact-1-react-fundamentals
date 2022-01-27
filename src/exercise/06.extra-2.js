@@ -9,7 +9,7 @@ import * as React from 'react'
 // Disable the onSubmit button by setting its "disabled" attribute.
 //   Rem to overtly convert to (errorMessage) to Boolean
 
-// Changed the name ID of the input element.
+// Changed the name ID of the input element to
 //  usernameInput from usernameInputID
 //  I never liked the previous name,
 //  but it had served a useful purpose originally when I was trying to locate
