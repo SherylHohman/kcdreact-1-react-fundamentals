@@ -20,7 +20,7 @@ function UsernameForm({onSubmitUsername}) {
 
   const handleSubmit = event => {
     event.preventDefault()
-    onSubmitUsername(event.target.usernameInput.value)
+    onSubmitUsername(event.target.elements.usernameInput.value)
   }
 
   const handleChange = event => {
@@ -34,8 +34,10 @@ function UsernameForm({onSubmitUsername}) {
       <div>
         <label htmlFor="usernameInput">Username:</label>
         <input onChange={handleChange} id="usernameInput" type="text" />
-        <p role="alert" style={{color: 'red'}}>
-          <i>{errorMessage}</i>
+        <p>
+          <i role="alert" style={{color: 'red'}}>
+            {errorMessage}
+          </i>
         </p>
       </div>
       <button disabled={Boolean(errorMessage)} type="submit">
